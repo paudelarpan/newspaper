@@ -4,7 +4,9 @@
 {% block content %} 
 
 {% if user.is_authenticated %} 
-    Hi {{ user.username }}! You are {{ user.age }} years old.
+    Hi {{ user.username }}! You are {{ user.age }} years old. <br> <br>
+    <a href="{% url 'article_list' %}">View articles</a>
+    <br> <br>
     <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
         <input type="Submit" value="Logout">
